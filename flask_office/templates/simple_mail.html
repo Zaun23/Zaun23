@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mb-4 bg-light border rounded-3 tp-5">
+    <div class="container pt-3">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="mb-3 form-group">
+                {{ form.recipent.label(class='form-label') }}
+                {{ form.recipent(class='form-control') }}
+            </div>
+            <div class="mb-3 form-group">
+                {{ form.sender_1.label(class='form-label') }}
+                {{ form.sender_1(class='form-control') }}
+            </div>
+            <div class="mb-3 form-group">
+                {{ form.sender_2.label(class='form-label') }}
+                {{ form.sender_2(class='form-control') }}
+            </div>
+            <div class="mb-3 form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+</div>>
+{% endblock %}
+
+

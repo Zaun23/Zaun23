@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import SubmitField, TextAreaField, SelectField, RadioField, IntegerField, StringField
+from wtforms import SubmitField, SelectField, IntegerField, StringField
 from wtforms.fields.html5 import DateField, TimeField
 from wtforms.validators import DataRequired
 
@@ -9,10 +9,10 @@ class BookingFormSimple(FlaskForm):
 
     # Information about room
     room = SelectField(u'Welchen Raum möchtest du buchen?', choices=[
-      ('Ristretto', 'Meetingraum Ristretto'), ('Espresso', 'Meetingraum Espresso'),
-      ('Macchiato', 'Meetingraum Macchiato'), ('Cappuccino', 'Meetingraum Cappuccino'),
-      ('Lungo', 'Meetingraum Lungo'), ('Schlossbergblick', 'Meetingraum Schlossbergblick')],
-      validators=[DataRequired()])
+        ('Ristretto', 'Meetingraum Ristretto'), ('Espresso', 'Meetingraum Espresso'),
+        ('Macchiato', 'Meetingraum Macchiato'), ('Cappuccino', 'Meetingraum Cappuccino'),
+        ('Lungo', 'Meetingraum Lungo'), ('Schlossbergblick', 'Meetingraum Schlossbergblick')],
+        validators=[DataRequired()])
     date = DateField('Wann willst du den Raum buchen?', format='%Y-%m-%d', validators=[DataRequired()])
     start_at = TimeField('Start: ', format='%H:%M', validators=[DataRequired()])
     end_at = TimeField('Ende: ', format='%H:%M', validators=[DataRequired()])
