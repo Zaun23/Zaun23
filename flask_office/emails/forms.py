@@ -9,7 +9,7 @@ from wtforms.validators import DataRequired, Email
 class EmailFormSimple(FlaskForm):
     
     recipent = EmailField("Empfänger Mail Adresse", validators=[DataRequired(), Email()])
-    sender_1 = TextField("Absender", validators=[DataRequired()])
-    sender_2 = TextField("Absender")
+    sender_1 = TextField("Absender 1", validators=[DataRequired()])
+    sender_2 = TextField("Absender 2")
     submit = SubmitField("Submit")
     

@@ -10,7 +10,7 @@ email = Blueprint('email', __name__)
 
 
 # ROUTE FOR GETTING A PACKAGE
-@email.route('/mail/packet', methods=['GET', 'POST'])
+@email.route('/mail/paket', methods=['GET', 'POST'])
 def notify_package():
     form = EmailFormSimple()
     
@@ -48,13 +48,14 @@ Dein CocoQuadrat Team""".format(sender1 = form.sender_1.data, sender2 = form.sen
         mail.send(msg)
         db.session.add(mail_info)
         db.session.commit()
+        flash("Mail wurde erfolgreich verschickt!")
         return redirect(url_for('core.index'))
     
     return render_template('simple_mail.html', form=form)
 
 
 # ROUTE FOR GETTING A LETTER
-@email.route('/mail/letter', methods=['GET', 'POST'])
+@email.route('/mail/brief', methods=['GET', 'POST'])
 def notify_letter():
     form = EmailFormSimple()
     
@@ -92,6 +93,7 @@ Dein CocoQuadrat Team""".format(sender_1 = form.sender_1.data, sender_2 = form.s
         mail.send(msg)
         db.session.add(mail_info)
         db.session.commit()
+        flash("Mail wurde erfolgreich verschickt!")
         return redirect(url_for('core.index'))
     
     return render_template('simple_mail.html', form=form)

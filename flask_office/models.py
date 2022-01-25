@@ -31,6 +31,7 @@ class RoomBooking(db.Model):
     date = db.Column(db.Date, nullable=False)
     start_at = db.Column(db.Time())
     end_at = db.Column(db.Time())
+    price = db.Column(db.Float())
     
     # Inforamtion about costumer
     company = db.Column(db.String(256), nullable=False)

@@ -2,6 +2,16 @@
 {% block content %}
 <!-- TODO ADD BUTTONS TO REDIRECT TO DIFFERENT FUNCTIONS OF SUITE -->
 
+<div class="container p-2">
+    <div class=row>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn btn-outline-success btn-lg btn-block" href="{{ url_for('bookings.simple_booking') }}">Raumbuchung</a>
+            <a class="btn btn-outline-info btn-lg btn-block" href="{{ url_for('email.notify_letter') }}">Brief</a>
+            <a class="btn btn-outline-info btn-lg btn-block" href="{{ url_for('email.notify_package') }}">Paket</a>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 
 
